@@ -11,7 +11,7 @@ A markdown file dedicated to Excel shortcuts.
 6. **Spell check**: highlight a range (or click on one cell for checking the entire sheet, or click Ctrl and select multiple tabs for checking the entire workbook), then F7 (fn + F7 if on laptop). If checking for the entire workbook, don't forget to ungroup the sheets after spell check, as any formatting afterwards would affect the entire workbook.
 7. **Delimit data**: If separated by "|": Data > Text to Coluns > Delimited > Next > Other: | > Next > Finish. \
                      Side note for **exporting data from pdf**: Inside Adobe pdf document > Tools > Export PDF to any format > Spreadsheet > Export > Save.              
-8. **Check format of data**: 
+8. **Check format of data**: Home > Number > displayed in drop down box
 
 ### Like a Pro: No Mouse
 **Press Alt**, then press a letter to go into a tab, then press another letter to go into a field. If you need to go back one level, press Esc. Do this for repetitive work, and it will be much faster than using mouse. 
@@ -22,34 +22,22 @@ A markdown file dedicated to Excel shortcuts.
   - Navigate quickly to last populated cell in one direction: Ctrl + Arrow
   - Highlight and navigate to last populated cell: Ctrl + Shift + Arrow
 
-2. **Insert one/more cell between two cells**
-    * Highlight second cell (for inserting one cell, if need to insert more, highlight N cells starting from the second cell)
-    * Ctrl + Shift + (+)
-
-3. **Delete one/more cell between two cells**
-    * Highlight the cell between (for deleting one cell, if need to delete more, highlight N cells in between)
-    * Ctrl + (-)
+2. **Insert or delete one/more cell between two cells**
+  - Insert: Highlight second cell (for inserting one cell, if need to insert more, highlight N cells starting from the second cell), then Ctrl + Shift + (+)
+  - Delete: Highlight the cell between (for deleting one cell, if need to delete more, highlight N cells in between), then Ctrl + (-)
  
-4. **Highlight a column**: Ctrl + Space
-  - Insert a column: 
-    * Ctrl + Space
-    * Ctrl + Shift + (+)
-  - Delete a column: 
-    * Ctrl + Space
-    * Ctrl + (-)
+3. **Insert or delete a column or a row**
+   *Highlight a column*: Ctrl + Space
+  - Insert a column: Ctrl + Space, then Ctrl + Shift + (+)
+  - Delete a column: Ctrl + Space, then Ctrl + (-) \
+   *Highlight a row*: Shift + Space
+  - Insert a row: Shift + Space, then Ctrl + Shift + (-)
+  - Delete a row: Shift + Space, then Ctrl + (-)
 
-5. **Highlight a row**: Shift + Space
-  - Insert a row: 
-    * Ctrl + Space
-    * Ctrl + Shift + (-)
-  - Delete a row: 
-    * Ctrl + Space
-    * Ctrl + (-)
-
-6.  **Fill formula down and fill formula across**
-  - Manually highlight the range and then:
-    * Down: Ctrl + D
-    * Right: Ctrl + R
+4.  **Fill formula down and fill formula across**
+    Manually highlight the range and then:
+    - Down: Ctrl + D
+    - Right: Ctrl + R
 
 
 ## Linking
