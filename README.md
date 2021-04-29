@@ -9,11 +9,11 @@ A markdown file dedicated to Excel shortcuts.
 4. **Group**: Data > Outline. This is to quickly hide/unhide things you want to present at a higher level, or more detailed level. 
 5. **Freeze top row or left column**: View > Freeze Panes. This is to fix header and rownames while scroll through. 
 6. **Spell check**: highlight a range (or click on one cell for checking the entire sheet, or click Ctrl and select multiple tabs for checking the entire workbook), then F7 (fn + F7 if on laptop). If checking for the entire workbook, don't forget to ungroup the sheets after spell check, as any formatting afterwards would affect the entire workbook.
-7. **Delimit data**: If separated by "|": Data > Text to Coluns > Delimited > Next > Other: | > Next > Finish.
-                     Side note for **exporting data from pdf**: Inside Adobe pdf document > Tools > Export PDF to any format > Spreadsheet > Export > Save.
+7. **Delimit data**: If separated by "|": Data > Text to Coluns > Delimited > Next > Other: | > Next > Finish. \
+                     Side note for **exporting data from pdf**: Inside Adobe pdf document > Tools > Export PDF to any format > Spreadsheet > Export > Save.              
 8. **Check format of data**: 
 
-### Like a pro: No mouse
+### Like a Pro: No Mouse
 **Press Alt**, then press a letter to go into a tab, then press another letter to go into a field. If you need to go back one level, press Esc. Do this for repetitive work, and it will be much faster than using mouse. 
 
 ### Highlighting, Inserting or Deleting
