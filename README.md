@@ -55,7 +55,8 @@ A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life a
 
 ### Matching
 #### VLOOKUP
-1. VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. \ 
+1. VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. \
+ 
   *Example = VLOOKUP($G6, $B$5:$E$21, 2, 0)*.
   * lookup_value: usual a unique identifier, e.g. person id, drug din, etc.
   * table_array: source data. The data you are looking for will always be the first column in the selected table_array. 
