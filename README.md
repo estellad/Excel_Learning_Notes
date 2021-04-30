@@ -1,4 +1,4 @@
-A markdown file dedicated to everything about Excel :sleepy: on Windows.
+A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life as a consultant, you know ~
 
 ## Basics
 ### General
@@ -75,8 +75,9 @@ INDEX(array, row_number, column_number) returns the **content** of this cell val
 
 #### INDEX-MATCH-MATCH
 INDEX(array, MATCH(lookup_value, lookup_array, \[match_type\]), MATCH(lookup_value, lookup_array, \[match_type\])) returns the **content**. This method is better than VLOOKUP, because we can match on any column, not necessarily the first column. Instead of using row number and column number, here we use match() to return them. \
-Example = INDEX(Data!$1:$1048576, MATCH(Exhibit!$A6, Data!$A:$A, 0), MATCH(Exhibit!B$1, Data!$1:$1, 0)). Note that the entire sheet is selected, and the first match returns row index so it has column locked, and the second match returns column index so it has row locked. Now it can be dragged to both directions, because everything is locked properly. \
-Note: a fast way to enter this formula without flipping between sheets is put INDEX(Data!$1:$1048576, MATCH(*XX*, Data!$A:$A, 0), MATCH(*XX*, Data!$1:$1, 0)) first, and then fill in $A6 and B$1 later (equivalent to without sheet name Exhibit!).
+Example = INDEX(Data!$1:$1048576, MATCH(Exhibit!$A6, Data!$A:$A, 0), MATCH(Exhibit!B$1, Data!$1:$1, 0)). 
+- Note that the entire sheet is selected, and the first match returns row index so it has column locked, and the second match returns column index so it has row locked. Now it can be dragged to both directions, because everything is locked properly. 
+- Note: a fast way to enter this formula without flipping between sheets is put INDEX(Data!$1:$1048576, MATCH(*XX*, Data!$A:$A, 0), MATCH(*XX*, Data!$1:$1, 0)) first, and then fill in $A6 and B$1 later (equivalent to without sheet name Exhibit!).
 
 ## Tables and Charts
 ### Tables
@@ -130,11 +131,11 @@ Select the data > Insert > Charts > so many up to you
 
 ## Examples of File Structure
 ### Literature Review Sheet Structure
-Title Page (tab white) | \
-Search Strategy --> (tab dark blue; empty content)| Search strategy (tab light blue for the rest) | PRISMA | Level 1 Screening | Level 2 Screening | \
-Extraction --> (tab dark orange, empty content)| Publication Details (tab light orange for the rest) | Method 1 | Method 2 | Method 3 | \
-Narrative Synthesis --> (tab dark green; empty content)| Method 1 Findings (tab light green for the rest) | Method 2 Findings | Method 3 Findings | \
-Appendix (tab dark grey; empty content) | Indications covered (tab light grey)
+- Title Page (tab white) | 
+- Search Strategy --> (tab dark blue; empty content)| Search strategy (tab light blue for the rest) | PRISMA | Level 1 Screening | Level 2 Screening |
+- Extraction --> (tab dark orange, empty content)| Publication Details (tab light orange for the rest) | Method 1 | Method 2 | Method 3 | 
+- Narrative Synthesis --> (tab dark green; empty content)| Method 1 Findings (tab light green for the rest) | Method 2 Findings | Method 3 Findings | 
+- Appendix (tab dark grey; empty content) | Indications covered (tab light grey)
 
 
 
