@@ -61,8 +61,8 @@ VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used 
   * table_array: source data. The data you are looking for will always be the first column in the selected table_array. 
   * col_index_num: the index in the table_array that you are trying to match from. 
   * range_lookup: TRUE - approx match; FALSE or 0 exact match. Often use 0 exact match.
-Dragging with VLOOKUP using references
-  For VLOOKUP, always fix the column and move the row, so the lookup_value is $G6
+
+Dragging with VLOOKUP using references: For VLOOKUP, always fix the column and move the row, so the lookup_value is $G6
 
 #### MATCH
 MATCH(lookup_value, lookup_array, \[match_type\]) returns the **position** of this cell value located in lookup_array. It is rarely used singly by itself, but it is often used with INDEX-MATCH-MATCH. \
