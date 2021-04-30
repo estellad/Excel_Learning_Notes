@@ -55,15 +55,13 @@ A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life a
 
 ### Matching
 #### VLOOKUP
-1. VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. \
- 
+VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. \
   *Example = VLOOKUP($G6, $B$5:$E$21, 2, 0)*.
   * lookup_value: usual a unique identifier, e.g. person id, drug din, etc.
   * table_array: source data. The data you are looking for will always be the first column in the selected table_array. 
   * col_index_num: the index in the table_array that you are trying to match from. 
   * range_lookup: TRUE - approx match; FALSE or 0 exact match. Often use 0 exact match.
-
-2. Dragging with VLOOKUP using references
+Dragging with VLOOKUP using references
   For VLOOKUP, always fix the column and move the row, so the lookup_value is $G6
 
 #### MATCH
