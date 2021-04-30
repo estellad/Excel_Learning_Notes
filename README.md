@@ -55,7 +55,8 @@ A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life a
 
 ### Matching
 #### VLOOKUP
-1. VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. Example = VLOOKUP($G6, $B$5:$E$21, 2, 0).
+1. VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup]) could be used for simple matching on **content**. \ 
+  *Example = VLOOKUP($G6, $B$5:$E$21, 2, 0)*.
   * lookup_value: usual a unique identifier, e.g. person id, drug din, etc.
   * table_array: source data. The data you are looking for will always be the first column in the selected table_array. 
   * col_index_num: the index in the table_array that you are trying to match from. 
@@ -65,17 +66,19 @@ A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life a
   For VLOOKUP, always fix the column and move the row, so the lookup_value is $G6
 
 #### MATCH
-MATCH(lookup_value, lookup_array, \[match_type\]) returns the **position** of this cell value located in lookup_array. It is rarely used singly by itself, but it is often used with INDEX-MATCH-MATCH. Example = MATCH($G8, $B$5:$F$5, 0).
+MATCH(lookup_value, lookup_array, \[match_type\]) returns the **position** of this cell value located in lookup_array. It is rarely used singly by itself, but it is often used with INDEX-MATCH-MATCH. \
+  *Example = MATCH($G8, $B$5:$F$5, 0)*.
   * lookup_value: lookup value.
   * lookup_array: source data, one row or one column. 
   * match_type: 1 by default, set to 0 for exact match.
 
 #### INDEX
-INDEX(array, row_number, column_number) returns the **content** of this cell value located in array, using coordinates. It is rarely used singly by itself, but it is often used with INDEX-MATCH-MATCH. Example = INDEX($E$8:$G$9, 4, 3). It is more dynamic than VLOOKUP, and it does not require the look up value to be in the first column. 
+INDEX(array, row_number, column_number) returns the **content** of this cell value located in array, using coordinates. It is rarely used singly by itself, but it is often used with INDEX-MATCH-MATCH. It is more dynamic than VLOOKUP, and it does not require the look up value to be in the first column. \
+  *Example = INDEX($E$8:$G$9, 4, 3)*. 
 
 #### INDEX-MATCH-MATCH
 INDEX(array, MATCH(lookup_value, lookup_array, \[match_type\]), MATCH(lookup_value, lookup_array, \[match_type\])) returns the **content**. This method is better than VLOOKUP, because we can match on any column, not necessarily the first column. Instead of using row number and column number, here we use match() to return them. \
-Example = INDEX(Data!$1:$1048576, MATCH(Exhibit!$A6, Data!$A:$A, 0), MATCH(Exhibit!B$1, Data!$1:$1, 0)). 
+  *Example = INDEX(Data!$1:$1048576, MATCH(Exhibit!$A6, Data!$A:$A, 0), MATCH(Exhibit!B$1, Data!$1:$1, 0)).* 
 - Note that the entire sheet is selected, and the first match returns row index so it has column locked, and the second match returns column index so it has row locked. Now it can be dragged to both directions, because everything is locked properly. 
 - Note: a fast way to enter this formula without flipping between sheets is put INDEX(Data!$1:$1048576, MATCH(*XX*, Data!$A:$A, 0), MATCH(*XX*, Data!$1:$1, 0)) first, and then fill in $A6 and B$1 later (equivalent to without sheet name Exhibit!).
 
