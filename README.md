@@ -119,7 +119,7 @@ Select the data > Insert > Charts > so many up to you
 5. **Format grid lines**: click on a grid line > Format Major Gridlines > Dash type > the fourth one
 6. **Black text**: dark grey is default, but select the chart > then black text
 7. **Font**: calibri is default, but select the chart > then Times New Roman
-8. **Format horizontal dates**: select horizontal axis > Format Axis > Axis Options > last one (looks like bar) > go down > Number > Date > Type > Choose Mar-12 as March 2012. Also, Axis position > On tick marks. Also to label less densely every 6 moths, Axis Options > Units > Major > 6 Months
+8. **Format horizontal dates**: select horizontal axis > Format Axis > Axis Options > last one (looks like bar) > go down > Number > Date > Type > Choose Mar-12 as March 2012. Also, Axis position > On tick marks. Also to label less densely every 6 months, Axis Options > Units > Major > 6 Months
 9. **Add legend**: click 'Plus' > Legend > Top. 
 10. **Update legend name**: right click chart > Select Data > click on name of the series > Edit > change Series name > OK.
 11. **Add Note**: Insert > Text Box
@@ -129,6 +129,121 @@ Select the data > Insert > Charts > so many up to you
 15. **NA do not show in plot**: change 0 entry in line chart to NA = IF(C4=0, NA(), C4)
 
 #### Advanced Chart Formatting
+- **Overlay a bar chart to an existing line chart**:
+  * Create a new line: right click plot > select data > add series, etc.
+  * Convert the new line to bar plot: right click > Change chart type > bar > Combo > select the series > Clustered Column > check Secondary Axis
+  * Add a axis title by click the plus sign, then right click the axis title > format axis > Title options > Text direction > Horizontal. Then align with left axis.
+  * Good practice :joy: change bar graph color from green to purple: right click the bar > Fill and Outline both to purple. 
+
+- **Error bar**:
+  * right click plot > select data > add series > add error series already made > enter Series Name = "Error Bars" and Series Value >
+  * Insert error bar: Design > Add Chart Element > Error Bars > More Error Bar Options > select series name "Error Bars"
+  * Format error bat: right click error bar > Format Error Bars > Error Bar Options > End Style > Cap/Minus \
+                                                                                  > Error Amount > Percentage > 100% \
+                                                                                  > Dash type > dotted 
+  * Delete error bar from the legend
+  * Format the legend to center: right click on legend > Format legend > Legend Options > Legend Position > Top > Press Shift and Down to make sure it's perfectly centered
+ 
+- **Linked text box for the error bar to reflect updates and explain**: 
+  * click plot > Insert > Text Box > drag a text box on the plot at the error bar > click into the text box to enter a formula to link > = "some cell name"
+  * (Sometimes it's easier to just have a not linked text box for formatting and character limit reason)
+
+- **Streamline a template** 
+  A template will save all your font, all of your formatting, notes, and sources 
+  * Repeatitive plot of this type: right click the plot > Save as Template > save it somewhere
+  * To access a template: Design > Change Chart Type > Templates > select it
+
+### Box and Whisker Plot
+You will need to create rows of summary stats (\[A\]min, \[B\]25%, \[C\]median, \[D\]75%, \[E\]max), and then rows of ploting stats based on summary stats(\[B\] - \[A\]min whisker, \[B\]blank dummy series (exist for the purpose of spacing), \[C\]-\[B\]25-50, \[D\]-\[C\]50-75, \[E\]-\[D\]max whisker) for each category :sweat: 
+1. Highlight rows except min and max whiskers, and then Insert > Charts > Stacked Column Charts 
+2. right click on chart > Move chart > New sheet: Box Intermediate
+3. click on the bottom chunk of stacked bars > Format Data Series > Series Options > Fill > No Fill \
+                                                                                   > Border > No line
+4. Remove from legend "Blank dummy series"
+5. Click Plus sign for Add Chart Element > Error Bars > More Options > Blank dummy series (for first adding the error bar at the bottom)
+6. click on error bar > Format Error Bars > Error Bar Options > Directions > Minus \
+                                                              > End Style > Cap \
+                                                              > Error Amount > Custom > Specify Value > Negative Error Value > Select data series Min Whisker > OK
+7. Do the same for top whisker, but instead of doing it for Blank dummy series, do it for 50-75. Also, add error bar for Positive Error Value > select Max Whisker. 
+9. Color: light blue for the 50-75 top half box, and dark blue for bottom half box. 
+10. Formatting, thicken the outline of boxes and whiskers, light grey dotted grid, add title, axis and footnote. 
+
+### Timelines / Swimlane Plot
+Plot time and height (for the purpose of not overlaying the text) of the events as a scattered plot, solidify the verticle lines to create landmarks. Next to each dot, add some data label text to specify the event. 
+
+### Waterfalls Plot
+Just stacked bar chart, but hiding some chunks to invisible.
+
+### Shading Plot
+To shade area between two lines, just add Area components to right click > Change Chart Type > Combo > for each line add a shading variable with Chart Type: Area > OK\
+The shading variables are just the copy of the line variables.
+
+### Combine multiple charts as an Exhibit
+Suppose the scenario that you have 2 charts on 2 different sheets
+1. Copy the 2 sheets A, B by right click > Move or Copy > check Create a copy > OK, then you have A(2) and B(2), and also create an Exhibit sheet.
+2. In A, click on chart > right click > Move Chart > Object in > Exhibit > OK. (Original A tab disappeared)
+3. Do the same for B
+4. In Exhibit > View > Workbook Views > Page Break > Preview > move both plots to page 1 (and page 2 disappear).
+5. Add a title and stuff, and do Printing checks
+
+## Text Manipulation
+### Text Basics
+In my honest opionion, just learn regular expression in R or Python, but:
+1. =LEN(cell) returns the number of characters in the cell, including spaces in the middle and on both ends
+2. =PROPER(cell or CELL or "cell cell") returns the cell as first letter capitalized, but the following letters in small case for each word. Similar for UPPER() and LOWER()
+3. =CONCATENATE(cell&" "&cell&" "&cell&" "&cell)
+4. =FIND(",", cell) returns common is the 6th character. FIND() is case sensitive, while SEARCH() is not
+5. =LEFT(cell, FIND()-1) returns the first several characters from the left.
+6. =MID(cell, start=FIND()+1, end=FIND()-FIND()-1) equals substring() in R :joy:
+7. =SUBSTITUTE(cell, "old", "new") replace text
+8. =RIGHT(cell, 4) returns last 4 characters starting from the right
+9. =TRIM() removes any leading or trailing spaces from a character string
+
+### Filter and Sorting
+#### Filter
+1. Apply filter: Ctrl + Shift + L
+2. Note: If a data has a break row, then filter will not be applied to all the data. Also if there is an empty column between the last two columns, and you press Ctrl + Shift + L, the last column is not added with a filter. Therefore, highlight all the rows and columns you want to apply a filter to
+3. There can also be filter by color, filter by number ranges, etc
+4. Filter can only be removed one by one. To remove all, click Clear in Data > Sort & Filter > Clear
+
+#### Sorting
+1. After adding filter, click the small drop down, and sort from oldest to newest/vice versa/by color
+2. Once sorted, impossible to go back unless pressing Ctrl + Z
+3. To sort by multiple variables: Home > Sort & Filter > Custom Sort > Add Level > Sort by: , Then by: > OK
+
+### Conditional Logic
+1. =IF(cell..., T, F), use together with AND(cond1,cond2) and OR()
+2. istext(), isnumber(), isblank(), isna(), islogical() can be used with if()
+3. iferror() to trap errors that has NA or blank or etc
+
+### Sumifs
+
+
+
+### Exhibits to Word
+#### Paste Chart
+1. **As a picture**
+  * select plot > Home > Clipboard > Copy > Copy as Picutre > As shown when printed > OK, and Ctrl + V. -> This will remove the dark grey dotted grey bakground. 
+  * Paste Special: Ctrl + C, in Word (> Home > Clipboard > Paste > Paste Special >) Ctrl + Alt + V > Picture Enhanced Metafile > OK. -> Sharper than standard plot. It preserves the formatting, size, and layout. However, it would make chart text hard to read and make adjusting plot size in Word difficult. 
+2. **As an object**
+  * Ctrl + C plot, then in Word > Ctrl + Alt + V > Microsoft Office Graphic Objecct. This allows the plot to be easily resized and reformatted. However, text might get messy when pasted in. Can help with linking, but not recommended.
+
+**Formatting Tips for Chart**
+1. Figure title, notes and sources should be typed in Word, so no need to copy together with the chart
+2. Adjust font size of axis labels, text boxes, etc. to 12pt before pasting
+3. A standard chart copied would be pasted with dimension 6.5" width \* 4.72" height. To make chart vertically smaller, **make it an object** in Excel before copying:
+  *  right click chart > Move Chart > Object in > Chart - As Object > OK. This allow to adjust the size of the chart in Excel.
+
+#### Pasting Table
+1. **As a picture**: same as chart's. Not recommended. 
+2. **Using Word's formatting**, which would disgard any Excel formatting: Ctrl + C and Ctrl + V
+
+**Formatting Tips for Tables**
+1. Same as chart's
+2. **Adjusting the table gridline formatting in Excel**, go to View > Normal View > uncheck Gridlines
+
+These guidelines can also apply for PowerPoints. 
+
 
 
 ## Examples of File Structure
