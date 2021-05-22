@@ -1,4 +1,4 @@
-A markdown file dedicated to everything about Excel :sleepy:  on Windows. Life as a consultant, you know ~
+A markdown file dedicated to everything about Excel :sleepy: on Windows. 
 
 ## Basics
 ### General
